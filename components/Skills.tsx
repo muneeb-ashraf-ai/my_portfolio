@@ -89,7 +89,7 @@ const Skills: React.FC = () => {
               
               <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-lavender/50 transition-all duration-300">
                 {/* Category Title */}
-                <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-lavender transition-colors">
+                <h3 className="text-2xl font-bold mb-6 group-hover:text-lavender transition-colors dark:text-white text-violet-700">
                   {category.category}
                 </h3>
 

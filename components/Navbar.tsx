@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         <div className="w-10 h-10 rounded-xl bg-lavender flex items-center justify-center text-white font-bold text-xl shadow-lg">
           M
         </div>
-        <span className="font-bold tracking-tight hidden sm:inline">MUNEEB</span>
+        <span className="font-bold tracking-tight hidden sm:inline">MUNEEB ASHRAF</span>
       </div>
 
       <div className={`hidden md:flex items-center gap-8 px-8 py-2 rounded-full transition-all duration-300 ${

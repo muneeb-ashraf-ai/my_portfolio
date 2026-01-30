@@ -137,7 +137,7 @@ const Education: React.FC = () => {
             className={`px-6 py-3 rounded-full font-semibold transition-all ${
               activeTab === 'degrees'
                 ? 'bg-gradient-to-r from-lavender to-violet text-white shadow-lg shadow-lavender/50'
-                : 'bg-white/5 text-white hover:bg-white/10 border border-white/20'
+                : 'dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:border-white/20 bg-gray-200 text-midnight hover:bg-gray-300 border-gray-300'
             }`}
           >
             <GraduationCap className="inline mr-2" size={20} />
@@ -150,7 +150,7 @@ const Education: React.FC = () => {
             className={`px-6 py-3 rounded-full font-semibold transition-all ${
               activeTab === 'courses'
                 ? 'bg-gradient-to-r from-lavender to-violet text-white shadow-lg shadow-lavender/50'
-                : 'bg-white/5 text-white hover:bg-white/10 border border-white/20'
+                : 'dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:border-white/20 bg-gray-200 text-midnight hover:bg-gray-300 border-gray-300'
             }`}
           >
             <Award className="inline mr-2" size={20} />
@@ -177,7 +177,7 @@ const Education: React.FC = () => {
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-lavender/50 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-lavender transition-colors mb-2">
+                      <h3 className="text-2xl font-bold group-hover:text-lavender transition-colors mb-2 dark:text-white text-violet-700">
                         {degree.title}
                       </h3>
                       <p className="text-gray-700 dark:text-gray-300 mb-2">{degree.institution}</p>
@@ -224,7 +224,7 @@ const Education: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-lavender to-violet opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300 blur-xl" />
                 
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-lavender/50 transition-all duration-300">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-lavender transition-colors mb-6">
+                  <h3 className="text-2xl font-bold group-hover:text-lavender transition-colors mb-6 dark:text-white text-violet-700">
                     {courseGroup.provider}
                   </h3>
                   

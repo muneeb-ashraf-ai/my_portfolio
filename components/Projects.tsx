@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
 
                 <div className="p-6 flex flex-col h-full">
                 {/* Title */}
-                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-lavender transition-colors">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-lavender transition-colors dark:text-white text-violet-700">
                     {project.title}
                   </h3>
 
@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="mt-16"
         >
-          <h2 className="text-3xl font-bold mb-6">Other Projects</h2>
+          <h2 className="text-3xl font-bold mb-6 dark:text-white text-violet-700">Other Projects</h2>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               {otherProjects.map((item, i) => {

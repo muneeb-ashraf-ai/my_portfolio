@@ -32,9 +32,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             >
               <Zap size={14} /> AVAILABLE FOR PROJECTS
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+            <h1 className={`text-5xl md:text-7xl font-extrabold leading-tight mb-6 ${theme === 'dark' ? '' : 'text-violet-700'}`}>
               Hi, I'm <span className="text-lavender">Muneeb</span>. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-lavender via-violet to-charcoal">
+              <span className={theme === 'dark' ? 'text-transparent bg-clip-text bg-gradient-to-r from-lavender via-violet to-charcoal' : 'text-lavender'}>
                 AI & Data Science Developer.
               </span>
             </h1>
@@ -66,11 +66,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           >
             <div className="aspect-square relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-lavender/10 group w-64 md:w-80 lg:w-96 mx-auto">
               <img 
-                src="/assets/profile.jpg" 
+                src="/assets/profile.png" 
                 alt="Muneeb - AI & Data Science Developer" 
-                className="w-full h-full object-cover blur-sm group-hover:blur-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                className="w-full h-full object-cover group-hover:opacity-100 transition-all duration-700 scale-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-br from-lavender/30 via-violet/20 to-transparent opacity-60 group-hover:opacity-0 transition-opacity duration-700 mix-blend-overlay" />
+              <div className="absolute inset-0 backdrop-blur-xl group-hover:backdrop-blur-0 transition-all duration-700 opacity-40 group-hover:opacity-0" />
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-lavender/20 rounded-full blur-3xl" />
@@ -96,7 +97,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <h2 className="text-4xl md:text-5xl font-extrabold text-lavender mb-2">{stat.val}</h2>
+              <h2 className={`text-4xl md:text-5xl font-extrabold mb-2 ${theme === 'dark' ? 'text-lavender' : 'text-violet-700'}`}>{stat.val}</h2>
               <p className="text-sm opacity-60 font-medium uppercase tracking-widest">{stat.label}</p>
             </motion.div>
           ))}
@@ -108,7 +109,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected <span className="text-lavender">Work</span></h2>
+              <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${theme === 'dark' ? '' : 'text-violet-700'}`}>Selected <span className="text-lavender">Work</span></h2>
               <p className="opacity-60 max-w-md">A collection of projects where I've applied AI and Data Science solutions.</p>
             </div>
             <button onClick={() => navigate('/projects')} className="text-lavender font-bold flex items-center gap-2 group hover:gap-3 transition-all">
@@ -160,7 +161,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       <section id="services" className="py-32 px-6 relative">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Elevating AI & <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-lavender to-violet drop-shadow-lg">Data Solutions</span></h2>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${theme === 'dark' ? '' : 'text-violet-700'}`}>Elevating AI & <br /> <span className={theme === 'dark' ? 'text-transparent bg-clip-text bg-gradient-to-r from-lavender to-violet drop-shadow-lg' : 'text-lavender'}>
+              Data Solutions
+            </span></h2>
             <div className="space-y-8">
               {[
                 { 
@@ -199,7 +202,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             </div>
           </div>
           <div className={`p-10 rounded-[3rem] ${theme === 'dark' ? 'glass-morphism' : 'glass-morphism-light'}`}>
-             <h3 className="text-3xl font-bold mb-8">What I Bring</h3>
+             <h3 className={`text-3xl font-bold mb-8 ${theme === 'dark' ? '' : 'text-violet-700'}`}>What I Bring</h3>
              <ul className="space-y-6">
                 {[
                   'Strong foundation in Mathematics and Algorithms',
@@ -236,7 +239,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
+            <h2 className={`text-4xl md:text-6xl font-extrabold mb-8 leading-tight ${theme === 'dark' ? '' : 'text-violet-700'}`}>
               Ready to collaborate on <br /> <span className="text-lavender">your next project?</span>
             </h2>
             <p className="text-xl opacity-60 mb-12 max-w-2xl mx-auto">
@@ -252,7 +255,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5 opacity-60 text-center">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm">© 2024 Muneeb Portfolio. All rights reserved.</p>
+          <p className="text-sm">© 2024 Muneeb Ashraf Portfolio. All rights reserved.</p>
           <div className="flex gap-8 text-sm font-bold">
             <a href="#" className="hover:text-lavender">GitHub</a>
             <a href="#" className="hover:text-lavender">LinkedIn</a>

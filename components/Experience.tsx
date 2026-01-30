@@ -101,7 +101,7 @@ const Experience: React.FC = () => {
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-lavender/50 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-lavender transition-colors mb-2">
+                      <h3 className="text-2xl font-bold group-hover:text-lavender transition-colors mb-2 dark:text-white text-violet-700">
                         {exp.title}
                       </h3>
                       <div className="flex items-center gap-2 text-lavender font-semibold mb-2">
