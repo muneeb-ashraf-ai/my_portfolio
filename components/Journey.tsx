@@ -71,14 +71,6 @@ Currently, I am working in a more demanding and rewarding role at Meissasoft. Th
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-midnight text-white' : 'bg-white text-midnight'} pt-32 pb-20 px-6`}>
-      {/* Back Button */}
-      <button
-        onClick={() => navigate('/')}
-        className="fixed top-24 left-6 z-30 flex items-center gap-2 text-lavender hover:text-violet transition-colors font-bold"
-      >
-        <ArrowLeft size={20} /> Back
-      </button>
-
       {/* Main Container */}
       <div className="max-w-4xl mx-auto">
         {/* Header with Title */}
