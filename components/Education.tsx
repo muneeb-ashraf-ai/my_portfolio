@@ -71,7 +71,11 @@ const Education: React.FC = () => {
 
   const courses: Course[] = [
     {
-      provider: 'NAVTTC',
+      provider: 'IELTS',
+      courses: ['Overall Band: 7.0 (CEFR Level C1) - Listening 8.0, Writing 6.5, Speaking 6.0, Reading 7.5']
+    },
+    {
+      provider: 'National Vocational & Technical Training Commission, Pakistan (NAVTTC)',
       courses: ['Artificial Intelligence (Machine Learning & Deep Learning) - Minhaj University, Lahore (Jun 2023 - Dec 2023)']
     },
     {
@@ -84,10 +88,6 @@ const Education: React.FC = () => {
         'Algebra: Elementary to Advanced - Johns Hopkins University',
         'Expressway to Data Science: Essential Math - University of Colorado Boulder'
       ]
-    },
-    {
-      provider: 'IELTS',
-      courses: ['Overall Band: 7.0 (CEFR Level C1) - Listening 8.0, Writing 6.5, Speaking 6.0, Reading 7.5']
     }
   ];
 
@@ -123,7 +123,7 @@ const Education: React.FC = () => {
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-lavender to-violet bg-clip-text text-transparent">
             Education & Training
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A comprehensive overview of my academic journey and professional development through various courses and certifications.
           </p>
         </motion.div>
@@ -180,11 +180,11 @@ const Education: React.FC = () => {
                       <h3 className="text-2xl font-bold text-white group-hover:text-lavender transition-colors mb-2">
                         {degree.title}
                       </h3>
-                      <p className="text-gray-300 mb-2">{degree.institution}</p>
+                      <p className="text-gray-700 dark:text-gray-300 mb-2">{degree.institution}</p>
                       <p className="text-lavender font-semibold mb-3">{degree.major}</p>
                     </div>
                     
-                    <div className="flex items-center gap-2 text-gray-400 whitespace-nowrap">
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 whitespace-nowrap">
                       <Calendar size={18} />
                       <span className="text-sm font-medium">{degree.duration}</span>
                     </div>
@@ -195,7 +195,7 @@ const Education: React.FC = () => {
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {degree.details.map((detail, i) => (
                           <div key={i} className="space-y-1">
-                            <p className="text-sm text-gray-400">{detail.label}</p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">{detail.label}</p>
                             <p className="text-lavender font-semibold">{detail.value}</p>
                           </div>
                         ))}
@@ -229,12 +229,20 @@ const Education: React.FC = () => {
                   </h3>
                   
                   <div className="space-y-3">
-                    {courseGroup.courses.map((course, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-lavender mt-2 flex-shrink-0" />
-                        <p className="text-gray-300">{course}</p>
-                      </div>
-                    ))}
+                    {courseGroup.courses.map((course, i) => {
+                      const [title, institute] = course.split(' - ');
+                      return (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 rounded-full bg-lavender mt-2 flex-shrink-0" />
+                          <p className="text-gray-700 dark:text-gray-300">
+                            {title}
+                            {institute && (
+                              <span className="text-lavender font-semibold"> {' — '}{institute}</span>
+                            )}
+                          </p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>

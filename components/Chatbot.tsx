@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, User, Bot, GripVertical } from 'lucide-react';
+import { MessageCircle, X, Send, User, Bot } from 'lucide-react';
 import { ChatMessage, Theme } from '../types';
 import { getBotResponse } from '../services/chatbotService';
 import { FAQS } from '../constants';
@@ -22,98 +22,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ theme }) => {
   ]);
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const isDraggingRef = useRef<boolean>(false);
-  const dragOffsetRef = useRef({ x: 0, y: 0 });
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const chatWindowRef = useRef<HTMLDivElement>(null);
-
-  // Initialize position on mount
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setPosition({
-        x: window.innerWidth - 100,
-        y: window.innerHeight - 100,
-      });
-    }
-  }, []);
-
-  // Global mouse move handler for smooth dragging
-  useEffect(() => {
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      if (isDraggingRef.current && !isOpen) {
-        const newX = e.clientX - dragOffsetRef.current.x;
-        const newY = e.clientY - dragOffsetRef.current.y;
-
-        // Keep button within bounds
-        const minX = 28;
-        const maxX = window.innerWidth - 28;
-        const minY = 28;
-        const maxY = window.innerHeight - 28;
-
-        setPosition({
-          x: Math.max(minX, Math.min(maxX, newX)),
-          y: Math.max(minY, Math.min(maxY, newY)),
-        });
-      }
-    };
-
-    const handleGlobalMouseUp = () => {
-      isDraggingRef.current = false;
-    };
-
-    window.addEventListener('mousemove', handleGlobalMouseMove);
-    window.addEventListener('mouseup', handleGlobalMouseUp);
-
-    return () => {
-      window.removeEventListener('mousemove', handleGlobalMouseMove);
-      window.removeEventListener('mouseup', handleGlobalMouseUp);
-    };
-  }, [isOpen]);
-
-  // Calculate best position for expanded chat
-  const getOptimalChatPosition = () => {
-    if (!buttonRef.current) return { x: position.x, y: position.y };
-
-    const chatWidth = 350;
-    const chatHeight = 500;
-    const padding = 20;
-    const buttonSize = 56;
-
-    let x = position.x;
-    let y = position.y - chatHeight - padding;
-
-    // Check if chat would go off-screen to the right
-    if (x + chatWidth / 2 > window.innerWidth - padding) {
-      x = window.innerWidth - chatWidth / 2 - padding;
-    }
-    // Check if chat would go off-screen to the left
-    if (x - chatWidth / 2 < padding) {
-      x = chatWidth / 2 + padding;
-    }
-    // Check if chat would go off-screen at the top
-    if (y < padding) {
-      y = position.y + buttonSize + padding;
-    }
-    // Check if chat would go off-screen at the bottom
-    if (y + chatHeight > window.innerHeight - padding) {
-      y = window.innerHeight - chatHeight - padding;
-    }
-
-    return { x, y };
-  };
-
-  const handleDragStart = (e: React.MouseEvent) => {
-    if (isOpen) return; // Don't drag when chat is open
-    isDraggingRef.current = true;
-    if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      dragOffsetRef.current = {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      };
-    }
-  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -150,29 +58,14 @@ const Chatbot: React.FC<ChatbotProps> = ({ theme }) => {
   };
 
   return (
-    <div 
-      className="fixed z-50"
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: 'translate(-50%, -50%)',
-      }}
-      ref={buttonRef}
-    >
+    <div className="fixed z-50 bottom-24 right-6">
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            ref={chatWindowRef}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            style={{
-              position: 'absolute',
-              left: `${getOptimalChatPosition().x - position.x}px`,
-              top: `${getOptimalChatPosition().y - position.y}px`,
-              transform: 'translate(-50%, -50%)',
-            }}
-            className={`w-[350px] h-[500px] flex flex-col rounded-2xl shadow-2xl shadow-lavender/30 overflow-hidden backdrop-blur-md ${
+            className={`fixed bottom-24 right-6 w-[350px] h-[500px] max-h-[70vh] max-w-[calc(100vw-3rem)] flex flex-col rounded-2xl shadow-2xl shadow-lavender/30 overflow-hidden backdrop-blur-md ${
               theme === 'dark' ? 'bg-[#1E1428]/95 border border-lavender/30' : 'bg-white/95 border border-lavender/20'
             }`}
           >
@@ -253,9 +146,8 @@ const Chatbot: React.FC<ChatbotProps> = ({ theme }) => {
       <motion.button
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
-        onMouseDown={handleDragStart}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-gradient-to-r from-lavender to-violet shadow-xl shadow-lavender/50 flex items-center justify-center text-white relative hover:shadow-2xl hover:shadow-lavender/70 transition-all cursor-grab active:cursor-grabbing"
+        className="w-14 h-14 rounded-full bg-gradient-to-r from-lavender to-violet shadow-xl shadow-lavender/50 flex items-center justify-center text-white relative hover:shadow-2xl hover:shadow-lavender/70 transition-all cursor-pointer"
       >
         {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
         {!isOpen && (

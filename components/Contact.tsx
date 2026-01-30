@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-lavender to-violet bg-clip-text text-transparent">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             My passion lies at the intersection of mathematics, teaching, and technology. Whether you have a challenging problem to solve, an idea for a project, or a curiosity about my work, I'm always open to a conversation. Connect with me through any of the channels below and let's explore how we can create something impactful together.
           </p>
         </motion.div>
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
                     {contact.title}
                   </h3>
                   
-                  <p className="text-gray-400 group-hover:text-white transition-colors break-all">
+                  <p className="text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors break-all">
                     {contact.value}
                   </p>
                 </div>
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <p className="text-gray-400 mb-6">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             Feel free to reach out using any of the methods above. I'll get back to you as soon as possible!
           </p>
           <motion.div

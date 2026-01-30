@@ -29,8 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     { label: 'Experience', path: '/experience', id: '' },
     { label: 'Skills', path: '/skills', id: '' },
     { label: 'Projects', path: '/projects', id: '' },
-    { label: 'Journey', path: '/journey', id: '' },
-    { label: 'Contact', path: '/contact', id: '' }
+    { label: 'Journey', path: '/journey', id: '' }
   ];
 
   const handleDownloadResume = () => {
@@ -120,7 +119,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           Resume
         </button>
 
-        <button className="bg-lavender text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-105 active:scale-95 transition-all">
+        <button
+          onClick={() => navigate('/contact')}
+          className="bg-lavender text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-105 active:scale-95 transition-all"
+        >
           Contact
         </button>
       </div>

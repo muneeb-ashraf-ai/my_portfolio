@@ -12,6 +12,7 @@ export interface Project {
 export interface FAQ {
   question: string;
   answer: string;
+  keywords?: string[];
 }
 
 export interface ChatMessage {

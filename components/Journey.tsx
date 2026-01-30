@@ -118,7 +118,7 @@ Currently, I am working in a more demanding and rewarding role at Meissasoft. Th
 
                 {/* Icon and Title Section */}
                 <div className="relative z-10 flex items-center gap-4 mb-6">
-                  <div className={`p-4 rounded-2xl bg-gradient-to-r ${section.color} shadow-lg shadow-lavender/20 group-hover:shadow-lavender/40 transition-all bg-opacity-20 group-hover:bg-opacity-30`}>
+                  <div className="p-4 rounded-2xl bg-lavender/20 border border-lavender/30 shadow-lg shadow-lavender/20 group-hover:shadow-lavender/40 transition-all">
                     <Icon className="text-lavender group-hover:drop-shadow-lg transition-all" size={28} />
                   </div>
                   <div>
@@ -161,7 +161,10 @@ Currently, I am working in a more demanding and rewarding role at Meissasoft. Th
           <p className="text-lg opacity-70 mb-8 max-w-xl mx-auto">
             I'm always excited to discuss new opportunities, collaborate on impactful projects, and share knowledge.
           </p>
-          <button className="px-10 py-4 bg-gradient-to-r from-lavender to-violet text-white rounded-2xl font-bold shadow-xl shadow-lavender/20 hover:scale-105 transition-transform">
+          <button
+            onClick={() => navigate('/contact')}
+            className="px-10 py-4 bg-gradient-to-r from-lavender to-violet text-white rounded-2xl font-bold shadow-xl shadow-lavender/20 hover:scale-105 transition-transform"
+          >
             Get In Touch
           </button>
         </motion.div>

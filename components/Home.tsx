@@ -64,11 +64,11 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             transition={{ duration: 0.8, type: 'spring' }}
             className="order-1 md:order-2 relative"
           >
-            <div className="aspect-square relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-lavender/10 group">
+            <div className="aspect-square relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-lavender/10 group w-64 md:w-80 lg:w-96 mx-auto">
               <img 
-                src="https://picsum.photos/600/600?random=10" 
+                src="/assets/profile.jpg" 
                 alt="Muneeb - AI & Data Science Developer" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                className="w-full h-full object-cover blur-sm group-hover:blur-0 transition-all duration-700 scale-110 group-hover:scale-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
