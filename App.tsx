@@ -8,6 +8,11 @@ import Chatbot from './components/Chatbot';
 import InteractiveParticleBackground from './components/InteractiveParticleBackground';
 import Journey from './components/Journey';
 import Home from './components/Home';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
+import Experience from './components/Experience';
+import Education from './components/Education';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -60,6 +65,46 @@ const App: React.FC = () => {
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Journey theme={theme} />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/projects" 
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <Projects />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/skills" 
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <Skills />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/contact" 
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <Contact />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/experience" 
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <Experience />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/education" 
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <Education />
             </Layout>
           } 
         />

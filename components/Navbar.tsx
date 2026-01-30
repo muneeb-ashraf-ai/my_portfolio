@@ -25,10 +25,22 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
   const navItems = [
     { label: 'Home', path: '/', id: 'hero' },
-    { label: 'Projects', path: '/', id: 'projects' },
-    { label: 'Services', path: '/', id: 'services' },
-    { label: 'Journey', path: '/journey', id: '' }
+    { label: 'Education', path: '/education', id: '' },
+    { label: 'Experience', path: '/experience', id: '' },
+    { label: 'Skills', path: '/skills', id: '' },
+    { label: 'Projects', path: '/projects', id: '' },
+    { label: 'Journey', path: '/journey', id: '' },
+    { label: 'Contact', path: '/contact', id: '' }
   ];
+
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/resume.pdf';
+    link.download = 'Muneeb_Ashraf_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const handleNavClick = (item: typeof navItems[0]) => {
     if (item.path === '/') {
@@ -99,6 +111,13 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           }`}
         >
           {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+
+        <button 
+          onClick={handleDownloadResume}
+          className="hidden sm:inline bg-lavender text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-105 active:scale-95 transition-all"
+        >
+          Resume
         </button>
 
         <button className="bg-lavender text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-105 active:scale-95 transition-all">

@@ -111,7 +111,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected <span className="text-lavender">Work</span></h2>
               <p className="opacity-60 max-w-md">A collection of projects where I've applied AI and Data Science solutions.</p>
             </div>
-            <button className="text-lavender font-bold flex items-center gap-2 group">
+            <button onClick={() => navigate('/projects')} className="text-lavender font-bold flex items-center gap-2 group hover:gap-3 transition-all">
               View All Projects <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
