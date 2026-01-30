@@ -257,10 +257,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm">© 2024 Muneeb Ashraf Portfolio. All rights reserved.</p>
           <div className="flex gap-8 text-sm font-bold">
-            <a href="#" className="hover:text-lavender">GitHub</a>
-            <a href="#" className="hover:text-lavender">LinkedIn</a>
-            <a href="#" className="hover:text-lavender">Twitter</a>
-            <a href="#" className="hover:text-lavender">Email</a>
+            <a href="https://github.com/alphaaa-m" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/muneeb-ashraf" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">LinkedIn</a>
+            <a href="https://wa.me/923006275648" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">WhatsApp</a>
+            <a href="mailto:muneebashraf.edu@gmail.com?subject=Hello%20Muneeb" className="hover:text-lavender transition-colors">Email</a>
           </div>
         </div>
       </footer>

@@ -95,10 +95,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-3 mr-4">
-          <a href="#" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
+          <a href="https://github.com/alphaaa-m" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
             <Github size={20} />
           </a>
-          <a href="#" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
+          <a href="https://linkedin.com/in/muneeb-ashraf" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
             <Linkedin size={20} />
           </a>
         </div>
