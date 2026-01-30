@@ -33,7 +33,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               <Zap size={14} /> AVAILABLE FOR PROJECTS
             </motion.div>
             <h1 className={`text-5xl md:text-7xl font-extrabold leading-tight mb-6 ${theme === 'dark' ? '' : 'text-violet-700'}`}>
-              Hi, I'm <span className="text-lavender">Muneeb</span>. <br />
+              Hi, I'm <span className="text-lavender">Muneeb</span>... <br />
               <span className={theme === 'dark' ? 'text-transparent bg-clip-text bg-gradient-to-r from-lavender via-violet to-charcoal' : 'text-lavender'}>
                 AI & Data Science Developer.
               </span>
