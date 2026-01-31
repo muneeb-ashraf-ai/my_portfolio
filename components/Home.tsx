@@ -67,7 +67,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           >
             <div className="aspect-square relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-lavender/10 group w-64 md:w-80 lg:w-96 mx-auto">
               <img 
-                src="/assets/profile.png" 
+                src="/assets/profile.webp" 
                 alt="Muneeb - AI & Data Science Developer" 
                 loading="lazy"
                 decoding="async"
