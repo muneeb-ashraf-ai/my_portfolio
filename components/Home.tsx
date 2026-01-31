@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowRight, Code, Palette, Zap, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +11,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const navigate = useNavigate();
+  const [profileLoaded, setProfileLoaded] = useState(false);
 
   return (
     <>
@@ -68,7 +69,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               <img 
                 src="/assets/profile.png" 
                 alt="Muneeb - AI & Data Science Developer" 
-                className="w-full h-full object-cover group-hover:opacity-100 transition-all duration-700 scale-100"
+                loading="lazy"
+                decoding="async"
+                onLoad={() => setProfileLoaded(true)}
+                className={`w-full h-full object-cover transition-all duration-700 scale-100 group-hover:opacity-100 ${
+                  profileLoaded ? 'opacity-100 blur-0' : 'opacity-0 blur-md'
+                }`}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-lavender/30 via-violet/20 to-transparent opacity-60 group-hover:opacity-0 transition-opacity duration-700 mix-blend-overlay" />
               <div className="absolute inset-0 backdrop-blur-xl group-hover:backdrop-blur-0 transition-all duration-700 opacity-40 group-hover:opacity-0" />

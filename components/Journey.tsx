@@ -70,7 +70,7 @@ Currently, I am working in a more demanding and rewarding role at Meissasoft. Th
   ];
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-midnight text-white' : 'bg-white text-midnight'} pt-32 pb-20 px-6`}>
+    <div className={`min-h-screen ${theme === 'dark' ? 'text-white' : 'text-midnight'} pt-32 pb-20 px-6 relative`}>
       {/* Main Container */}
       <div className="max-w-4xl mx-auto">
         {/* Header with Title */}
@@ -134,9 +134,6 @@ Currently, I am working in a more demanding and rewarding role at Meissasoft. Th
             );
           })}
         </div>
-
-        {/* Timeline Visualization - Vertical line connecting sections */}
-        <div className="hidden md:block absolute left-1/2 top-96 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-lavender/30 to-transparent -z-10" />
 
         {/* Call to Action */}
         <motion.div

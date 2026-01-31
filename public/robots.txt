@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /private
+
+Sitemap: https://muneeb-ashraf.vercel.app/sitemap.xml
+
+# Delay for bots (in seconds)
+Crawl-delay: 1
+
+# For specific bots
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1

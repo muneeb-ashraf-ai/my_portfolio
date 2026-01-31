@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muneeb Ashraf",
+  "jobTitle": "AI & Data Science Developer",
+  "email": "muneebashraf.edu@gmail.com",
+  "telephone": "+92-3006275648",
+  "url": "https://muneeb-ashraf.vercel.app",
+  "image": "https://muneeb-ashraf.vercel.app/assets/profile.png",
+  "description": "Experienced AI & Data Science developer specializing in Machine Learning, Deep Learning, and backend development with Python. Building intelligent solutions with mathematics and technology.",
+  "sameAs": [
+    "https://linkedin.com/in/muneeb-ashraf-ai",
+    "https://github.com/alphaaa-m"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Meissasoft"
+  },
+  "educationCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "MS Data Science",
+      "educationalLevel": "Master's",
+      "issuedBy": "University of Engineering and Technology (UET) Lahore"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "MSc Mathematics",
+      "educationalLevel": "Master's",
+      "issuedBy": "Government College University (GCU) Lahore"
+    }
+  ],
+  "knowsAbout": [
+    "Machine Learning",
+    "Deep Learning",
+    "Python",
+    "FastAPI",
+    "TensorFlow",
+    "Data Science",
+    "Data Analysis",
+    "SQL",
+    "PostgreSQL",
+    "MongoDB",
+    "Computer Vision",
+    "Natural Language Processing"
+  ],
+  "skills": {
+    "@type": "Thing",
+    "name": "Python, FastAPI, TensorFlow, Keras, Machine Learning, Deep Learning, Data Science, SQL, PostgreSQL, MongoDB, Git, GitHub"
+  }
+}
