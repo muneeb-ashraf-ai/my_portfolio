@@ -2,6 +2,7 @@
 import { Project, FAQ } from './types';
 
 export const COLORS = {
+  paleLavender: '#F3F0F5',
   white: '#FFFFFF',
   lavender: '#6B3B8E',
   violet: '#3E1F5A',

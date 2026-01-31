@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+  --color-pale-lavender: #F3F0F5;
+  --color-lavender: #6B3B8E;
+  --color-violet: #3E1F5A;
+  --color-charcoal: #1E1428;
+  --color-midnight: #0B080E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  background: #0B080E;
+  color: #FFFFFF;
+}
+
+html.light {
+  background: #FFFFFF;
+  color: #0B080E;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-morphism-light {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b3b8e;
+  border-radius: 10px;
+}
+
+.theme-transition {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}

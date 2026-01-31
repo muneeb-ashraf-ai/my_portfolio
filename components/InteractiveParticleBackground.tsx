@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from './ThemeContext';
 
 interface Star {
   x: number;
@@ -15,11 +18,12 @@ interface Star {
   floatSpeed: number;
 }
 
-const InteractiveParticleBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
+const InteractiveParticleBackground: React.FC = () => {
+  const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starsRef = useRef<Star[]>([]);
   const mousePos = useRef({ x: 0, y: 0 });
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const timeRef = useRef<number>(0);
 
   const isDark = theme === 'dark';

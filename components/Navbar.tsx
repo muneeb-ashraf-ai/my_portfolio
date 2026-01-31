@@ -1,20 +1,17 @@
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun, Github, Linkedin, Menu, X } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Theme } from '../types';
+import { usePathname, useRouter } from 'next/navigation';
+import { useTheme } from './ThemeContext';
 
-interface NavbarProps {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
+const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +42,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const handleNavClick = (item: typeof navItems[0]) => {
     setIsMobileMenuOpen(false);
     if (item.path === '/') {
-      if (location.pathname !== '/') {
-        navigate('/');
+      if (pathname !== '/') {
+        router.push('/');
       }
       if (item.id) {
         setTimeout(() => {
@@ -55,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         }, 100);
       }
     } else {
-      navigate(item.path);
+      router.push(item.path);
     }
   };
 
@@ -71,7 +68,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           : 'bg-transparent border-transparent py-5'
       } ${theme === 'dark' ? 'text-white' : 'text-midnight'}`}
     >
-      <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
+      <div
+        className="flex items-center gap-2 cursor-pointer"
+        onClick={() => router.push('/')}
+      >
         <div className="w-10 h-10 rounded-xl bg-lavender flex items-center justify-center text-white font-bold text-xl shadow-lg">
           M
         </div>
@@ -122,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         </button>
 
         <button
-          onClick={() => navigate('/contact')}
+          onClick={() => router.push('/contact')}
           className="hidden sm:inline bg-lavender text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-105 active:scale-95 transition-all"
         >
           Contact
@@ -173,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  navigate('/contact');
+                  router.push('/contact');
                 }}
                 className="block w-full bg-lavender text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg"
               >

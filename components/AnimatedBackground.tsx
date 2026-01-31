@@ -1,8 +1,11 @@
+"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from './ThemeContext';
 
-const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
+const AnimatedBackground: React.FC = () => {
+  const { theme } = useTheme();
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       {/* Base gradient layer */}

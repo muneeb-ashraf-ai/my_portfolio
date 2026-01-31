@@ -1,16 +1,15 @@
+"use client";
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, User, Bot } from 'lucide-react';
-import { ChatMessage, Theme } from '../types';
+import { MessageCircle, X, Send, Bot } from 'lucide-react';
+import { ChatMessage } from '../types';
 import { chatbotEngine } from '../services/chatbotEngine';
 import { FAQS } from '../constants';
+import { useTheme } from './ThemeContext';
 
-interface ChatbotProps {
-  theme: Theme;
-}
-
-const Chatbot: React.FC<ChatbotProps> = ({ theme }) => {
+const Chatbot: React.FC = () => {
+  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
