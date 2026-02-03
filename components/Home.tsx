@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { ArrowRight, Code, Palette, Zap, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Code, Palette, Zap, CheckCircle2, Voicemail, MicrochipIcon, Mic } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Theme } from '../types';
 import { PROJECTS } from '../constants';
@@ -164,75 +164,94 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 px-6 relative">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${theme === 'dark' ? '' : 'text-violet-700'}`}>Elevating AI & <br /> <span className={theme === 'dark' ? 'text-transparent bg-clip-text bg-gradient-to-r from-lavender to-violet drop-shadow-lg' : 'text-lavender'}>
-              Data Solutions
-            </span></h2>
-            <div className="space-y-8">
-              {[
-                { 
-                  icon: <Code className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
-                  title: 'Machine Learning & Deep Learning', 
-                  desc: 'Building intelligent models for classification, detection, and prediction tasks.' 
-                },
-                { 
-                  icon: <Zap className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
-                  title: 'Full-Stack Development', 
-                  desc: 'Creating end-to-end applications combining AI backends with interactive frontends.' 
-                },
-                { 
-                  icon: <Palette className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
-                  title: 'Data Analysis & Visualization', 
-                  desc: 'Transforming raw data into actionable insights with compelling visualizations.' 
-                }
-              ].map((service, i) => (
-                <motion.div 
-                  key={i} 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex gap-6 group hover:cursor-pointer"
-                >
-                  <div className="w-14 h-14 shrink-0 rounded-2xl bg-lavender/10 flex items-center justify-center group-hover:bg-lavender group-hover:text-white group-hover:shadow-lg group-hover:shadow-lavender/40 transition-all">
-                    {service.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2 group-hover:text-lavender transition-colors">{service.title}</h4>
-                    <p className="opacity-60 text-sm leading-relaxed group-hover:opacity-80 transition-opacity">{service.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+<section id="services" className="py-32 px-6 relative">
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+    <div>
+      <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${theme === 'dark' ? '' : 'text-violet-700'}`}>
+        Building Smart <br /> 
+        <span className={theme === 'dark' 
+          ? 'text-transparent bg-clip-text bg-gradient-to-r from-lavender to-violet drop-shadow-lg' 
+          : 'text-lavender'}>
+          AI Solutions
+        </span>
+      </h2>
+
+      <div className="space-y-8">
+        {[
+          { 
+            icon: <Code className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            title: 'Machine Learning & Deep Learning', 
+            desc: 'Designing ML and DL models for classification, prediction, and intelligent decision systems.' 
+          },
+          { 
+            icon: <Zap className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            title: 'Computer Vision Systems', 
+            desc: 'Building image-based solutions like tumor detection, digit recognition, and object analysis using CNNs.' 
+          },
+          { 
+            icon: <Mic className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            title: 'Voice Agents & Conversational AI', 
+            desc: 'Developing voice-enabled agents using speech-to-text, LLMs, and text-to-speech for natural user interaction.' 
+          },
+          { 
+            icon: <Palette className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            title: 'Data Analysis & Visualization', 
+            desc: 'Analyzing datasets with Python and presenting insights using clean, meaningful visualizations.' 
+          }
+        ].map((service, i) => (
+          <motion.div 
+            key={i} 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="flex gap-6 group hover:cursor-pointer"
+          >
+            <div className="w-14 h-14 shrink-0 rounded-2xl bg-lavender/10 flex items-center justify-center group-hover:bg-lavender group-hover:text-white group-hover:shadow-lg group-hover:shadow-lavender/40 transition-all">
+              {service.icon}
             </div>
-          </div>
-          <div className={`p-10 rounded-[3rem] ${theme === 'dark' ? 'glass-morphism' : 'glass-morphism-light'}`}>
-             <h3 className={`text-3xl font-bold mb-8 ${theme === 'dark' ? '' : 'text-violet-700'}`}>What I Bring</h3>
-             <ul className="space-y-6">
-                {[
-                  'Strong foundation in Mathematics and Algorithms',
-                  'Expertise in Python, ML/DL frameworks',
-                  'Problem-solving with analytical thinking',
-                  'Clean code and best practices',
-                  'Passion for continuous learning'
-                ].map((item, i) => (
-                  <motion.li 
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-4"
-                  >
-                    <CheckCircle2 size={24} className="text-lavender" />
-                    <span className="font-medium opacity-80">{item}</span>
-                  </motion.li>
-                ))}
-             </ul>
-          </div>
-        </div>
-      </section>
+            <div>
+              <h4 className="text-xl font-bold mb-2 group-hover:text-lavender transition-colors">
+                {service.title}
+              </h4>
+              <p className="opacity-60 text-sm leading-relaxed group-hover:opacity-80 transition-opacity">
+                {service.desc}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+
+    <div className={`p-10 rounded-[3rem] ${theme === 'dark' ? 'glass-morphism' : 'glass-morphism-light'}`}>
+      <h3 className={`text-3xl font-bold mb-8 ${theme === 'dark' ? '' : 'text-violet-700'}`}>
+        What I Bring
+      </h3>
+
+      <ul className="space-y-6">
+        {[
+          'Strong foundation in Mathematics and Algorithms',
+          'Hands-on experience with Python, TensorFlow, Keras, and Scikit-learn',
+          'Practical ML projects in healthcare and finance domains',
+          'Experience building voice-enabled AI agents and chat systems',
+          'Continuous learning mindset with focus on Computer Vision & NLP'
+        ].map((item, i) => (
+          <motion.li 
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="flex items-center gap-4"
+          >
+            <CheckCircle2 size={24} className="text-lavender" />
+            <span className="font-medium opacity-80">{item}</span>
+          </motion.li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-32 px-6">
