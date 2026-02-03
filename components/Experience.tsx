@@ -138,7 +138,7 @@ const Experience: React.FC = () => {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/assets/resume.pdf"
+            href="/assets/CV_Muneeb_Ashraf.pdf"
             download
             className="inline-block bg-gradient-to-r from-lavender to-violet text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-lavender/50 transition-all"
           >

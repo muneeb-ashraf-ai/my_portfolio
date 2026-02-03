@@ -60,9 +60,9 @@ export const FAQS: FAQ[] = [
   },
   {
     question: "Can I download your resume?",
-    answer: "Yes. Use the Resume button in the header or download from /assets/resume.pdf.",
+    answer: "Yes. Use the Resume button in the header or download from /assets/CV_Muneeb_Ashraf.pdf.",
     keywords: ["resume", "cv", "download"],
-    links: [{ text: "Download Resume", url: "/assets/resume.pdf" }]
+    links: [{ text: "Download Resume", url: "/assets/CV_Muneeb_Ashraf.pdf" }]
   },
   {
     question: "What are your featured projects?",

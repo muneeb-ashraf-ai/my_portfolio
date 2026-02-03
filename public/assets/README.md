@@ -4,8 +4,8 @@ This folder contains all the essential materials for the portfolio:
 
 ## Files to Add
 
-1. **resume.pdf** - Your resume file (PDF format)
-   - Place your actual resume here with the filename `resume.pdf`
+1. **CV_Muneeb_Ashraf.pdf** - Your resume file (PDF format)
+   - Place your actual resume here with the filename `CV_Muneeb_Ashraf.pdf`
    - It will be downloadable from the "Resume" button in the navbar
 
 2. **profile.jpg** - Your profile picture
@@ -18,16 +18,16 @@ This folder contains all the essential materials for the portfolio:
 
 ## How to Use
 
-- Update `public/assets/resume.pdf` with your actual resume
+- Update `public/assets/CV_Muneeb_Ashraf.pdf` with your actual resume
 - Add your profile picture to this folder
-- Reference them in your components using relative paths like `/assets/resume.pdf` or `/assets/profile.jpg`
+- Reference them in your components using relative paths like `/assets/CV_Muneeb_Ashraf.pdf` or `/assets/profile.jpg`
 
 ## Folder Structure
 
 ```
 public/
 ├── assets/
-│   ├── resume.pdf
+│   ├── CV_Muneeb_Ashraf.pdf
 │   ├── profile.jpg
 │   └── README.md (this file)
 ```

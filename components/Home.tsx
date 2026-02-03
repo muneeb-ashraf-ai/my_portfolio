@@ -179,22 +179,22 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       <div className="space-y-8">
         {[
           { 
-            icon: <Code className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            icon: <Code className="text-lavender group-hover:text-white group-hover:drop-shadow-lg transition-all" />, 
             title: 'Machine Learning & Deep Learning', 
             desc: 'Designing ML and DL models for classification, prediction, and intelligent decision systems.' 
           },
           { 
-            icon: <Zap className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            icon: <Zap className="text-lavender group-hover:text-white group-hover:drop-shadow-lg transition-all" />, 
             title: 'Computer Vision Systems', 
             desc: 'Building image-based solutions like tumor detection, digit recognition, and object analysis using CNNs.' 
           },
           { 
-            icon: <Mic className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            icon: <Mic className="text-lavender group-hover:text-white group-hover:drop-shadow-lg transition-all" />, 
             title: 'Voice Agents & Conversational AI', 
             desc: 'Developing voice-enabled agents using speech-to-text, LLMs, and text-to-speech for natural user interaction.' 
           },
           { 
-            icon: <Palette className="text-lavender group-hover:drop-shadow-lg transition-all" />, 
+            icon: <Palette className="text-lavender group-hover:text-white group-hover:drop-shadow-lg transition-all" />, 
             title: 'Data Analysis & Visualization', 
             desc: 'Analyzing datasets with Python and presenting insights using clean, meaningful visualizations.' 
           }
@@ -270,7 +270,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             <p className="text-xl opacity-60 mb-12 max-w-2xl mx-auto">
               Whether you need AI solutions, data analysis, or custom applications, let's create something amazing together!
             </p>
-            <button className="px-12 py-5 bg-lavender text-white rounded-3xl font-bold text-lg shadow-2xl shadow-lavender/40 hover:scale-105 hover:shadow-3xl hover:shadow-lavender/60 active:scale-95 transition-all">
+            <button
+              onClick={() => navigate('/contact')}
+              className="px-12 py-5 bg-lavender text-white rounded-3xl font-bold text-lg shadow-2xl shadow-lavender/40 hover:scale-105 hover:shadow-3xl hover:shadow-lavender/60 active:scale-95 transition-all"
+            >
               Get In Touch
             </button>
           </motion.div>

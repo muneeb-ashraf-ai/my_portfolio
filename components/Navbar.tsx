@@ -29,14 +29,13 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     { label: 'Education', path: '/education', id: '' },
     { label: 'Experience', path: '/experience', id: '' },
     { label: 'Skills', path: '/skills', id: '' },
-    { label: 'Projects', path: '/projects', id: '' },
-    { label: 'Journey', path: '/journey', id: '' }
+    { label: 'Projects', path: '/projects', id: '' }
   ];
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/assets/resume.pdf';
-    link.download = 'Muneeb_Ashraf_Resume.pdf';
+    link.href = '/assets/CV_Muneeb_Ashraf.pdf';
+    link.download = 'CV_Muneeb_Ashraf.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

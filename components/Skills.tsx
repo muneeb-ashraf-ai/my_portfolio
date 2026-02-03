@@ -11,7 +11,7 @@ const Skills: React.FC = () => {
   const skillCategories: Skill[] = [
     {
       category: 'Programming & Libraries',
-      skills: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SQL', 'FastAPI', 'SQLAlchemy', 'TensorFlow/Keras', 'pipecat', 'uv']
+      skills: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SQL', 'FastAPI', 'SQLAlchemy', 'TensorFlow/Keras', 'PipeCat', 'UV']
     },
     {
       category: 'ML & Concepts',
