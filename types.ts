@@ -15,11 +15,3 @@ export interface FAQ {
   keywords?: string[];
   links?: Array<{ text: string; url: string }>;
 }
-
-export interface ChatMessage {
-  id: string;
-  text: string;
-  sender: 'user' | 'bot';
-  timestamp: Date;
-  links?: Array<{ text: string; url: string }>;
-}

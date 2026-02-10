@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Theme } from './types';
 import Navbar from './components/Navbar';
-import Chatbot from './components/Chatbot';
 import InteractiveParticleBackground from './components/InteractiveParticleBackground';
 import Journey from './components/Journey';
 import Home from './components/Home';
@@ -34,7 +33,6 @@ const Layout: React.FC<LayoutProps> = ({ children, theme, toggleTheme }) => {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-lavender z-50 origin-left" style={{ scaleX }} />
       {children}
-      <Chatbot theme={theme} />
     </div>
   );
 };
