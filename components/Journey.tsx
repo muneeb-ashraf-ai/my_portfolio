@@ -57,15 +57,25 @@ Once the internship ended, I continued teaching at Hajveri Lyceum School, where 
       title: "The Road Ahead",
       icon: Target,
       color: "from-lavender via-violet to-charcoal",
-      content: `Along with teaching in school, I started preparing for my dream of studying abroad. I took the IELTS, securing an overall 7.0 band score (Listening 8.0, Reading 7.5, Writing 6.5, Speaking 6.0). I applied for foreign scholarships, but due to my 2+2 degree structure (BSc + MSc instead of a 4-year BS), I faced repeated rejections. This was a disheartening phase, but it didn't break my resolve. Instead, I decided to take a step-by-step approach: complete an MS in Pakistan first, and then reapply abroad for a PhD.
+      content: `I was admitted to the MS Data Science program at UET, marking a new phase in my academic journey. The program strengthened my commitment to AI research and advanced learning. During my first semester, I studied new Data Science topics, expanded my technical skills, and achieved a CGPA of 3.68, reflecting consistent progress.
 
-Currently, I am working in a more demanding and rewarding role at Meissasoft. This is a full-fledged internship where I not only focus on coding and projects but also gain a deeper understanding of how the industry functions. I practice Object-Oriented Programming (OOP) by building a Chess Game Engine and a Ride Sharing Simulation. I solve Data Structures and Algorithms problems on HackerRank, design SQL databases, and create a CRUD-based Student Management System using FastAPI and SQLAlchemy. Unlike my short internship at InsightSol, this experience gives me real insight into the market—how companies structure projects, manage databases, build APIs, and test applications before deployment. Here, I truly feel like a part of the tech ecosystem rather than just a learner.`
+At the same time, I continued my internship at Meissasoft, where I gained structured exposure to software development practices, system design, and collaborative workflows. While working there, I received a separate remote job opportunity in an R&D role focused on voice agent testing and development.
+
+In this role, I build and evaluate voice agents using Pipecat, while researching ways to improve efficiency and performance. The work involves understanding how real conversational systems operate, including Text-to-Speech (TTS), Speech-to-Text (STT), and Large Language Models (LLMs). I also explored prompt engineering and studied how AI agents reason, respond, and adapt in real environments.
+
+This experience moved my learning from theory to applied research. Instead of only implementing models, I now analyze behavior, reliability, and interaction quality, skills directly aligned with my long-term goal of contributing to advanced AI systems.`
     },
     {
       title: "Conclusion",
       icon: Award,
       color: "from-violet to-lavender",
-      content: `Also, I've been admitted to the MS Data Science program at UET. This is another milestone in my pursuit of excellence. With strong foundations in Mathematics, hands-on experience in Machine Learning and Deep Learning, and a passion for both teaching and research, I'm determined to grow into a researcher who not only advances AI but also uses it to solve real-world problems. My journey hasn't been smooth. Financial struggles, academic interruptions, and scholarship rejections have all been part of the path. But each challenge only strengthened my resilience and reinforced my purpose. Mathematics taught me logic, teaching taught me clarity, and Artificial Intelligence gave me a vision. My ultimate goal is to pursue a PhD, contribute to research in AI and Data Science, and continue teaching—sharing knowledge while creating impact through technology, along with practical use of AI for applications in software houses or as a freelancer.`
+      content: `My journey has been a gradual transformation rather than a single decision. Mathematics developed my problem-solving mindset. Teaching strengthened my ability to explain ideas clearly. Artificial Intelligence connected my curiosity with real-world impact.
+
+Financial limitations, academic interruptions, and repeated rejections did not stop my progress. They refined my direction. Today I am pursuing advanced studies while actively working with practical AI systems, bridging research and industry together.
+
+My goal is to earn a PhD, contribute meaningful research in AI and Data Science, continue teaching, and build intelligent solutions that improve real-world life.
+
+The path is still unfolding, and I am moving forward with clarity and purpose.`
     }
   ];
 
