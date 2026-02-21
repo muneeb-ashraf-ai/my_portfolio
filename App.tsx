@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Theme } from './types';
 import Navbar from './components/Navbar';
+import ChatbotPlaceholder from './components/ChatbotPlaceholder';
 import InteractiveParticleBackground from './components/InteractiveParticleBackground';
 import Journey from './components/Journey';
 import Home from './components/Home';
@@ -103,6 +104,14 @@ const App: React.FC = () => {
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Education />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/chatbot" 
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <ChatbotPlaceholder theme={theme} />
             </Layout>
           } 
         />

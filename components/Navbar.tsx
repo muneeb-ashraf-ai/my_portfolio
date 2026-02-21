@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Github, Linkedin, Menu, X } from 'lucide-react';
+import { Moon, Sun, Github, Linkedin, Menu, X, Bot } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Theme } from '../types';
 
@@ -29,7 +29,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     { label: 'Education', path: '/education', id: '' },
     { label: 'Experience', path: '/experience', id: '' },
     { label: 'Skills', path: '/skills', id: '' },
-    { label: 'Projects', path: '/projects', id: '' }
+    { label: 'Projects', path: '/projects', id: '' },
+    { label: 'AI Chat', path: '/chatbot', id: '' }
   ];
 
   const handleDownloadResume = () => {
@@ -82,16 +83,27 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           ? theme === 'dark' ? 'glass-morphism' : 'glass-morphism-light'
           : ''
       }`}>
-        {navItems.map((item) => (
-          <button
-            key={item.label}
-            onClick={() => handleNavClick(item)}
-            className="text-sm font-medium hover:text-lavender transition-colors relative group"
-          >
-            {item.label}
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-lavender transition-all duration-300 group-hover:w-full" />
-          </button>
-        ))}
+        {navItems.map((item) =>
+          item.label === 'AI Chat' ? (
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item)}
+              className="flex items-center gap-1.5 text-sm font-bold px-4 py-1.5 rounded-full border border-lavender/50 text-lavender hover:bg-lavender hover:text-white transition-all duration-200 shadow-sm hover:shadow-lavender/30"
+            >
+              <Bot size={14} />
+              AI Chat
+            </button>
+          ) : (
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item)}
+              className="text-sm font-medium hover:text-lavender transition-colors relative group"
+            >
+              {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-lavender transition-all duration-300 group-hover:w-full" />
+            </button>
+          )
+        )}
       </div>
 
       <div className="flex items-center gap-4">
@@ -149,15 +161,26 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           } shadow-lg`}
         >
           <div className="px-6 py-4 space-y-4">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleNavClick(item)}
-                className="block w-full text-left py-2 text-base font-medium hover:text-lavender transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.label === 'AI Chat' ? (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavClick(item)}
+                  className="flex items-center gap-2 w-full py-2 text-base font-bold text-lavender hover:opacity-80 transition-colors"
+                >
+                  <Bot size={16} />
+                  AI Chat
+                </button>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavClick(item)}
+                  className="block w-full text-left py-2 text-base font-medium hover:text-lavender transition-colors"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
             
             <div className="pt-4 border-t border-white/10 space-y-3">
               <button
