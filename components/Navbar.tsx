@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     { label: 'Experience', path: '/experience', id: '' },
     { label: 'Skills', path: '/skills', id: '' },
     { label: 'Projects', path: '/projects', id: '' },
-    { label: 'AI Chat', path: '/chatbot', id: '' }
+    { label: 'AI Chat', path: 'https://muneeb-chatbot.vercel.app/', id: '' }
   ];
 
   const handleDownloadResume = () => {
@@ -44,6 +44,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
   const handleNavClick = (item: typeof navItems[0]) => {
     setIsMobileMenuOpen(false);
+    if (item.path.startsWith('http')) {
+      window.open(item.path, '_blank');
+      return;
+    }
     if (item.path === '/') {
       if (location.pathname !== '/') {
         navigate('/');
