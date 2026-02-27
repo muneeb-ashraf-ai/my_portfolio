@@ -345,7 +345,7 @@ const EntryExperience: React.FC<EntryExperienceProps> = ({ onComplete }) => {
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
                     <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
                     <span className="ml-3 font-mono text-xs tracking-widest uppercase" style={{ color: 'rgba(167,139,250,0.5)' }}>
-                      portfolio.init
+                      portfolio initialization
                     </span>
                   </div>
 
@@ -369,7 +369,7 @@ const EntryExperience: React.FC<EntryExperienceProps> = ({ onComplete }) => {
                         className="font-mono text-sm md:text-base leading-relaxed"
                         style={{ color: 'rgba(134,239,172,0.9)' }}
                       >
-                        ✓ Verified. Access granted.
+                        ✓ Verified... Access granted..!
                       </motion.div>
                     )}
 
@@ -397,7 +397,7 @@ const EntryExperience: React.FC<EntryExperienceProps> = ({ onComplete }) => {
                         }}
                       >
                         <TypingText
-                          text="Welcome to Muneeb Ashraf's Portfolio."
+                          text="Welcome to Muneeb's Universe..."
                           speed={22}
                           onDone={() => setReadyTypingDone(true)}
                         />
