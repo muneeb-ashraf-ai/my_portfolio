@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Bot } from 'lucide-react';
 import { Theme } from './types';
+import EntryExperience from './components/EntryExperience';
 import Navbar from './components/Navbar';
 import InteractiveParticleBackground from './components/InteractiveParticleBackground';
 import Journey from './components/Journey';
@@ -83,6 +84,7 @@ const Layout: React.FC<LayoutProps> = ({ children, theme, toggleTheme }) => {
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('dark');
+  const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
     document.documentElement.className = theme;
@@ -92,7 +94,13 @@ const App: React.FC = () => {
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   return (
-    <Router>
+    <>
+      <AnimatePresence>
+        {!hasEntered && (
+          <EntryExperience onComplete={() => setHasEntered(true)} />
+        )}
+      </AnimatePresence>
+      <Router>
       <Routes>
         <Route 
           path="/" 
@@ -152,6 +160,7 @@ const App: React.FC = () => {
         />
       </Routes>
     </Router>
+    </>
   );
 };
 
