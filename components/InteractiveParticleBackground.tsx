@@ -13,9 +13,20 @@ interface Star {
   vy: number;
   floatPhase: number;
   floatSpeed: number;
+  burstVx: number;
+  burstVy: number;
+  burstEnergy: number;
 }
 
-const InteractiveParticleBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
+interface InteractiveParticleBackgroundProps {
+  theme: 'dark' | 'light';
+  spawnFromCenter?: boolean;
+}
+
+const InteractiveParticleBackground: React.FC<InteractiveParticleBackgroundProps> = ({
+  theme,
+  spawnFromCenter = false,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starsRef = useRef<Star[]>([]);
   const mousePos = useRef({ x: 0, y: 0 });
@@ -23,7 +34,7 @@ const InteractiveParticleBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ 
   const timeRef = useRef<number>(0);
 
   const isDark = theme === 'dark';
-  const starCount = 120;
+  const starCount = spawnFromCenter ? 170 : 120;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -34,20 +45,57 @@ const InteractiveParticleBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ 
 
     // Initialize stars function
     const initializeStars = () => {
-      starsRef.current = Array.from({ length: starCount }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 1.5 + 0.5,
-        baseOpacity: Math.random() * 0.6 + 0.3,
-        twinklePhase: Math.random() * Math.PI * 2,
-        twinkleSpeed: Math.random() * 0.02 + 0.01,
-        currentOpacity: 0.5,
-        glow: 0,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        floatPhase: Math.random() * Math.PI * 2,
-        floatSpeed: Math.random() * 0.01 + 0.003,
-      }));
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const viewportSpan = Math.max(canvas.width, canvas.height);
+
+      starsRef.current = Array.from({ length: starCount }, () => {
+        const twinklePhase = Math.random() * Math.PI * 2;
+        const floatPhase = Math.random() * Math.PI * 2;
+
+        if (spawnFromCenter) {
+          const angle = Math.random() * Math.PI * 2;
+          const initialSpread = Math.random() * 12;
+          // Scale burst velocity with viewport size so particles can reach screen edges.
+          const burstSpeed = viewportSpan * (0.007 + Math.random() * 0.005);
+
+          return {
+            x: centerX + Math.cos(angle) * initialSpread,
+            y: centerY + Math.sin(angle) * initialSpread,
+            size: Math.random() * 1.5 + 0.5,
+            baseOpacity: Math.random() * 0.6 + 0.3,
+            twinklePhase,
+            twinkleSpeed: Math.random() * 0.02 + 0.01,
+            currentOpacity: 0.5,
+            glow: 0,
+            vx: (Math.random() - 0.5) * 0.18,
+            vy: (Math.random() - 0.5) * 0.18,
+            floatPhase,
+            floatSpeed: Math.random() * 0.01 + 0.003,
+            burstVx: Math.cos(angle) * burstSpeed,
+            burstVy: Math.sin(angle) * burstSpeed,
+            burstEnergy: 1.08,
+          };
+        }
+
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 1.5 + 0.5,
+          baseOpacity: Math.random() * 0.6 + 0.3,
+          twinklePhase,
+          twinkleSpeed: Math.random() * 0.02 + 0.01,
+          currentOpacity: 0.5,
+          glow: 0,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          floatPhase,
+          floatSpeed: Math.random() * 0.01 + 0.003,
+          burstVx: 0,
+          burstVy: 0,
+          burstEnergy: 0,
+        };
+      });
     };
 
     // Set canvas size
@@ -87,6 +135,13 @@ const InteractiveParticleBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ 
 
       // Update and draw stars
       starsRef.current.forEach((star) => {
+        // Initial radial blast behavior so stars spread from the explosion point.
+        if (star.burstEnergy > 0.001) {
+          star.x += star.burstVx * star.burstEnergy;
+          star.y += star.burstVy * star.burstEnergy;
+          star.burstEnergy *= spawnFromCenter ? 0.989 : 0.964;
+        }
+
         // Update floating position
         star.floatPhase += star.floatSpeed;
         const floatX = Math.cos(star.floatPhase) * 0.5;
@@ -180,7 +235,7 @@ const InteractiveParticleBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ 
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isDark, starCount]);
+  }, [isDark, spawnFromCenter, starCount]);
 
   return (
     <canvas

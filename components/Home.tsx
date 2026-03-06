@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowRight, Code, Palette, Zap, CheckCircle2, Voicemail, MicrochipIcon, Mic } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Theme } from '../types';
 import { PROJECTS } from '../constants';
+import { getProfileImageSrc, isProfileImagePreloaded, preloadProfileImage } from '../utils/profileImagePreload';
 
 interface HomeProps {
   theme: Theme;
@@ -11,7 +12,19 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const navigate = useNavigate();
-  const [profileLoaded, setProfileLoaded] = useState(false);
+  const [profileLoaded, setProfileLoaded] = useState(() => isProfileImagePreloaded());
+
+  useEffect(() => {
+    if (profileLoaded) {
+      return;
+    }
+
+    void preloadProfileImage().then((loaded) => {
+      if (loaded) {
+        setProfileLoaded(true);
+      }
+    });
+  }, [profileLoaded]);
 
   return (
     <>
@@ -67,11 +80,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           >
             <div className="aspect-square relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-lavender/10 group w-64 md:w-80 lg:w-96 mx-auto">
               <img 
-                src="/assets/profile.webp" 
+                src={getProfileImageSrc()} 
                 alt="Muneeb - AI & Data Science Developer" 
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 onLoad={() => setProfileLoaded(true)}
+                onError={() => setProfileLoaded(true)}
                 className={`w-full h-full object-cover transition-all duration-700 scale-100 group-hover:opacity-100 ${
                   profileLoaded ? 'opacity-100 blur-0' : 'opacity-0 blur-md'
                 }`}

@@ -93,74 +93,71 @@ const App: React.FC = () => {
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
+  if (!hasEntered) {
+    return <EntryExperience onComplete={() => setHasEntered(true)} />;
+  }
+
   return (
-    <>
-      <AnimatePresence>
-        {!hasEntered && (
-          <EntryExperience onComplete={() => setHasEntered(true)} />
-        )}
-      </AnimatePresence>
-      <Router>
+    <Router>
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Home theme={theme} />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/journey" 
+        <Route
+          path="/journey"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Journey theme={theme} />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/projects" 
+        <Route
+          path="/projects"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Projects />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/skills" 
+        <Route
+          path="/skills"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Skills />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/contact" 
+        <Route
+          path="/contact"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Contact />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/experience" 
+        <Route
+          path="/experience"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Experience />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/education" 
+        <Route
+          path="/education"
           element={
             <Layout theme={theme} toggleTheme={toggleTheme}>
               <Education />
             </Layout>
-          } 
+          }
         />
       </Routes>
     </Router>
-    </>
   );
 };
 
