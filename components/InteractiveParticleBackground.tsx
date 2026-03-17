@@ -16,6 +16,8 @@ interface Star {
   burstVx: number;
   burstVy: number;
   burstEnergy: number;
+  burstDelay: number;
+  burstDamping: number;
 }
 
 interface InteractiveParticleBackgroundProps {
@@ -55,9 +57,9 @@ const InteractiveParticleBackground: React.FC<InteractiveParticleBackgroundProps
 
         if (spawnFromCenter) {
           const angle = Math.random() * Math.PI * 2;
-          const initialSpread = Math.random() * 12;
-          // Scale burst velocity with viewport size so particles can reach screen edges.
-          const burstSpeed = viewportSpan * (0.007 + Math.random() * 0.005);
+          const initialSpread = 6 + Math.random() * 20;
+          // Use a staggered launch so the center transition feels intentional instead of abrupt.
+          const burstSpeed = viewportSpan * (0.0044 + Math.random() * 0.0035);
 
           return {
             x: centerX + Math.cos(angle) * initialSpread,
@@ -74,7 +76,9 @@ const InteractiveParticleBackground: React.FC<InteractiveParticleBackgroundProps
             floatSpeed: Math.random() * 0.01 + 0.003,
             burstVx: Math.cos(angle) * burstSpeed,
             burstVy: Math.sin(angle) * burstSpeed,
-            burstEnergy: 1.08,
+            burstEnergy: 0.9,
+            burstDelay: Math.random() * 26,
+            burstDamping: 0.991 + Math.random() * 0.004,
           };
         }
 
@@ -94,6 +98,8 @@ const InteractiveParticleBackground: React.FC<InteractiveParticleBackgroundProps
           burstVx: 0,
           burstVy: 0,
           burstEnergy: 0,
+          burstDelay: 0,
+          burstDamping: 0,
         };
       });
     };
@@ -135,11 +141,13 @@ const InteractiveParticleBackground: React.FC<InteractiveParticleBackgroundProps
 
       // Update and draw stars
       starsRef.current.forEach((star) => {
-        // Initial radial blast behavior so stars spread from the explosion point.
-        if (star.burstEnergy > 0.001) {
+        // Initial launch behavior for center-spawned stars.
+        if (star.burstDelay > 0) {
+          star.burstDelay -= 1;
+        } else if (star.burstEnergy > 0.001) {
           star.x += star.burstVx * star.burstEnergy;
           star.y += star.burstVy * star.burstEnergy;
-          star.burstEnergy *= spawnFromCenter ? 0.989 : 0.964;
+          star.burstEnergy *= spawnFromCenter ? star.burstDamping : 0.964;
         }
 
         // Update floating position
