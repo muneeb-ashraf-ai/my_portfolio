@@ -153,6 +153,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
                   <img 
                     src={project.image} 
                     alt={project.title} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-lavender/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -167,7 +169,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
                   </div>
                   <h3 className="text-2xl font-bold mb-3 group-hover:text-lavender transition-colors">{project.title}</h3>
                   <p className="text-sm opacity-70 mb-6 leading-relaxed group-hover:opacity-90 transition-opacity">{project.description}</p>
-                  <button className="p-3 rounded-full bg-lavender/10 text-lavender group-hover:bg-lavender group-hover:text-white group-hover:shadow-lg group-hover:shadow-lavender/40 transition-all">
+                  <button aria-label={`Open ${project.title}`} className="p-3 rounded-full bg-lavender/10 text-lavender group-hover:bg-lavender group-hover:text-white group-hover:shadow-lg group-hover:shadow-lavender/40 transition-all">
                     <ArrowRight size={20} />
                   </button>
                 </div>
