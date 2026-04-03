@@ -7,14 +7,29 @@ interface ExperienceItem {
   company: string;
   duration: string;
   description: string;
+  technologies?: string[];
+  highlights?: string[];
 }
 
 const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
+      title: 'Remote AI Voice Bot Intern',
+      company: 'Remote',
+      duration: 'Dec 2025 - Mar 2026',
+      description: 'Developed basic real-time voice bots in Python using PipeCat by combining LLM reasoning with STT and TTS pipelines for interactive voice conversations.',
+      technologies: ['Python', 'PipeCat', 'LLMs', 'STT', 'TTS'],
+      highlights: [
+        'Built foundational real-time voice bot workflows.',
+        'Integrated LLMs with STT and TTS components.',
+        'Tested and evaluated bot responses across multiple scenarios.',
+        'Improved conversation flow and performance reliability.',
+      ],
+    },
+    {
       title: 'Python Developer Intern',
       company: 'Meissasoft',
-      duration: 'July 2025 - Present',
+      duration: 'July 2025 - Dec 2025',
       description: 'Gaining real-world insights into the market, project structuring, database management, API development, and application testing.'
     },
     {
@@ -119,6 +134,27 @@ const Experience: React.FC = () => {
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     {exp.description}
                   </p>
+
+                  {exp.technologies && exp.technologies.length > 0 && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-lavender/40 bg-lavender/10 px-3 py-1 text-xs font-semibold text-lavender"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {exp.highlights && exp.highlights.length > 0 && (
+                    <ul className="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300 list-disc pl-5 marker:text-lavender">
+                      {exp.highlights.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </motion.div>
             ))}
