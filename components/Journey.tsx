@@ -17,6 +17,7 @@ const Journey: React.FC<JourneyProps> = ({ theme }) => {
       subtitle: "My Journey",
       icon: BookOpen,
       color: "from-lavender to-violet",
+      image: "/assets/P1.png",
       content: `From an early age, I was fascinated by two things: numbers and technology. Mathematics gave me the thrill of solving problems, while technology sparked my curiosity about how the world could be transformed through innovation. Over time, I discovered that the real magic happens when the two come together. This realization guided every step of my academic and professional journey.`
     },
     {
@@ -33,6 +34,7 @@ Initially, I planned to pursue engineering and was even selected for a universit
       title: "The Turning Point: MSc & Data Science",
       icon: GraduationCap,
       color: "from-blue-500 to-cyan-500",
+      image: "/assets/P2.png",
       content: `By the time restrictions lifted, the government had decided to phase out MSc programs and adopt the international 4-year BS system. Only a few universities still offered MSc, and among them was Government College University, Lahore (GCUL). Determined not to abandon my goal, I moved to Lahore and completed my MSc in Mathematics with a CGPA of 3.37/4.0.
 
 The MSc years became a turning point. I not only gained strong academic knowledge but also improved my confidence, problem-solving skills, and social experience. More importantly, I came across the field of Data Science. Fascinated, I began learning Python programming through YouTube tutorials. Soon, I was exploring Machine Learning, discovering how it connected Mathematics with technology—my two lifelong passions. Throughout my degree at GCUL, I stayed socially active. I was a member of the Chawla Mathematics Society, helping organize mathematical seminars and workshops. I also joined the Blood Donor Society, volunteering in blood donation drives and awareness campaigns.`
@@ -57,6 +59,7 @@ Once the internship ended, I continued teaching at Hajveri Lyceum School, where 
       title: "The Road Ahead",
       icon: Target,
       color: "from-lavender via-violet to-charcoal",
+      image: "/assets/P3.png",
       content: `I was admitted to the MS Data Science program at UET, marking a new phase in my academic journey. The program strengthened my commitment to AI research and advanced learning. During my first semester, I studied new Data Science topics, expanded my technical skills, and achieved a CGPA of 3.68, reflecting consistent progress.
 
 At the same time, I continued my internship at Meissasoft, where I gained structured exposure to software development practices, system design, and collaborative workflows. While working there, I received a separate remote job opportunity in an R&D role focused on voice agent testing and development.
@@ -101,46 +104,69 @@ The path is still unfolding, and I am moving forward with clarity and purpose.`
         <div className="space-y-20">
           {sections.map((section, index) => {
             const Icon = section.icon;
+            
+            // Determine if the image should be on the left or right to create an alternating layout
+            // We use index % 2 to alternate. But only sections with an image actually render it.
+            const isImageLeft = index % 2 !== 0;
+
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative group rounded-3xl overflow-hidden p-12 backdrop-blur-sm ${
-                  theme === 'dark'
-                    ? 'bg-white/5 border border-white/10 hover:border-lavender/50 shadow-lg hover:shadow-lavender/20'
-                    : 'bg-black/5 border border-black/10 hover:border-lavender/50 shadow-lg hover:shadow-lavender/10'
-                } transition-all duration-300`}
-              >
-                {/* Gradient Background with Glow */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${section.color} opacity-0 group-hover:opacity-8 transition-opacity duration-500 rounded-3xl blur-sm`} />
-                <div className={`absolute inset-0 bg-gradient-to-r ${section.color} opacity-0 group-hover:opacity-3 transition-opacity duration-500 rounded-3xl`} />
+              <div key={index} className={`flex flex-col ${section.image ? (isImageLeft ? 'lg:flex-row-reverse' : 'lg:flex-row') : ''} gap-10 items-center`}>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`relative flex-1 group rounded-3xl overflow-hidden p-12 backdrop-blur-sm ${
+                    theme === 'dark'
+                      ? 'bg-white/5 border border-white/10 hover:border-lavender/50 shadow-lg hover:shadow-lavender/20'
+                      : 'bg-black/5 border border-black/10 hover:border-lavender/50 shadow-lg hover:shadow-lavender/10'
+                  } transition-all duration-300 w-full`}
+                >
+                  {/* Gradient Background with Glow */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${section.color} opacity-0 group-hover:opacity-8 transition-opacity duration-500 rounded-3xl blur-sm`} />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${section.color} opacity-0 group-hover:opacity-3 transition-opacity duration-500 rounded-3xl`} />
 
-                {/* Icon and Title Section */}
-                <div className="relative z-10 flex items-center gap-4 mb-6">
-                  <div className="p-4 rounded-2xl bg-lavender/20 border border-lavender/30 shadow-lg shadow-lavender/20 group-hover:shadow-lavender/40 transition-all">
-                    <Icon className="text-lavender group-hover:drop-shadow-lg transition-all" size={28} />
+                  {/* Icon and Title Section */}
+                  <div className="relative z-10 flex items-center gap-4 mb-6">
+                    <div className="p-4 rounded-2xl bg-lavender/20 border border-lavender/30 shadow-lg shadow-lavender/20 group-hover:shadow-lavender/40 transition-all">
+                      <Icon className="text-lavender group-hover:drop-shadow-lg transition-all" size={28} />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lavender group-hover:to-violet transition-all">{section.title}</h2>
+                      {section.subtitle && <p className="text-sm opacity-60">{section.subtitle}</p>}
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lavender group-hover:to-violet transition-all">{section.title}</h2>
-                    {section.subtitle && <p className="text-sm opacity-60">{section.subtitle}</p>}
+
+                  {/* Content */}
+                  <div className="relative z-10 text-lg leading-relaxed opacity-85 group-hover:opacity-95 space-y-4 transition-opacity">
+                    {section.content.split('\n\n').map((paragraph, idx) => (
+                      <p key={idx} className="text-justify">
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="relative z-10 text-lg leading-relaxed opacity-85 group-hover:opacity-95 space-y-4 transition-opacity">
-                  {section.content.split('\n\n').map((paragraph, idx) => (
-                    <p key={idx} className="text-justify">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+                  {/* Decorative line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-lavender to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
 
-                {/* Decorative line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-lavender to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.div>
+                {/* Optional Image Outside the Card */}
+                {section.image && (
+                  <motion.div 
+                    initial={{ opacity: 0, x: isImageLeft ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                    className="w-full lg:w-2/5 flex-shrink-0"
+                  >
+                    <img 
+                      src={section.image} 
+                      alt={section.title} 
+                      className={`w-full h-auto rounded-3xl border-4 ${theme === 'dark' ? 'border-lavender/30 shadow-lavender/20' : 'border-lavender/50 shadow-lavender/40'} shadow-2xl object-cover hover:scale-105 transition-transform duration-500`}
+                    />
+                  </motion.div>
+                )}
+              </div>
             );
           })}
         </div>

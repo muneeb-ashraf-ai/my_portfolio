@@ -14,9 +14,9 @@ interface ExperienceItem {
 const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
-      title: 'Remote AI Voice Bot Intern',
+      title: 'AI Developer',
       company: 'Remote',
-      duration: 'Dec 2025 - Mar 2026',
+      duration: 'Dec 2025 - May 2026',
       description: 'Developed basic real-time voice bots in Python using PipeCat by combining LLM reasoning with STT and TTS pipelines for interactive voice conversations.',
       technologies: ['Python', 'PipeCat', 'LLMs', 'STT', 'TTS'],
       highlights: [
@@ -30,31 +30,66 @@ const Experience: React.FC = () => {
       title: 'Python Developer Intern',
       company: 'Meissasoft',
       duration: 'July 2025 - Dec 2025',
-      description: 'Gaining real-world insights into the market, project structuring, database management, API development, and application testing.'
+      description: 'Gaining real-world insights into the market, project structuring, database management, API development, and application testing.',
+      technologies: ['Python', 'Databases', 'APIs', 'Software Testing', 'Project Management', 'FastAPI', 'Git'],
+      highlights: [
+        'Developed and integrated backend APIs.',
+        'Structured software projects for scalability and maintainability.',
+        'Managed and optimized databases.',
+        'Performed comprehensive application testing to ensure reliability.',
+      ],
     },
     {
       title: 'Trainee',
       company: 'Meissasoft',
       duration: 'May 2025 - July 2025',
-      description: 'Learned Object-Oriented Programming (OOP), Data Structures and Algorithms (DSA), SQL, and FastAPI.'
+      description: 'Learned Object-Oriented Programming (OOP), Data Structures and Algorithms (DSA), SQL, and FastAPI.',
+      technologies: ['Python', 'OOP', 'DSA', 'SQL', 'FastAPI'],
+      highlights: [
+        'Mastered core object-oriented design principles.',
+        'Implemented and analyzed fundamental data structures and algorithms.',
+        'Designed database schemas and executed SQL queries.',
+        'Built basic RESTful APIs using FastAPI.',
+      ],
     },
     {
       title: 'Teacher of Mathematics',
       company: 'Hajveri Lyceum School',
       duration: 'Aug 2023 - May 2025',
-      description: 'Refined communication and problem-solving skills by making complex ideas accessible to young learners.'
+      description: 'Refined communication and problem-solving skills by making complex ideas accessible to young learners.',
+      technologies: ['Curriculum Design', 'Public Speaking', 'Mentoring'],
+      highlights: [
+        'Broke down complex mathematical concepts for easier understanding.',
+        'Developed interactive lesson plans to engage students.',
+        'Cultivated a supportive and effective learning environment.',
+        'Evaluated student progress and adapted teaching strategies.',
+      ],
     },
     {
-      title: 'Remote Intern',
+      title: 'Remote ML Intern',
       company: 'InsightSol Technologies',
       duration: 'Apr 2024 - May 2024',
-      description: 'Gained first experience in applying Machine Learning models in a structured setting.'
+      description: 'Gained first experience in applying Machine Learning models in a structured setting.',
+      technologies: ['Machine Learning', 'Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Jupyter Notebooks', 'Seaborn'],
+      highlights: [
+        'Applied foundational machine learning algorithms to datasets.',
+        'Assisted in data preprocessing and feature engineering.',
+        'Evaluated model performance using standard metrics.',
+        'Collaborated on structured ML project workflows.',
+      ],
     },
     {
       title: 'Teacher of Mathematics',
       company: 'Ali Science Academy',
       duration: 'Jun 2018 - Mar 2020',
-      description: 'Taught Mathematics during intermediate studies, which planted the seed for a lifelong passion for education.'
+      description: 'Taught Mathematics during intermediate studies, which planted the seed for a lifelong passion for education.',
+      technologies: ['Mathematics Instruction', 'Student Assessment', 'Problem Solving'],
+      highlights: [
+        'Taught intermediate-level mathematics to diverse classes.',
+        'Fostered critical thinking and analytical skills in students.',
+        'Provided one-on-one tutoring for students needing extra help.',
+        'Developed foundational experience in educational methodologies.',
+      ],
     }
   ];
 

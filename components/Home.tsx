@@ -56,7 +56,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
               I blend Mathematics with modern technology to build intelligent solutions in Machine Learning, Deep Learning, and Data Science.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-lavender text-white rounded-2xl font-bold shadow-xl shadow-lavender/30 flex items-center gap-2 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-lavender/50 transition-all">
+              <button 
+                onClick={() => navigate('/projects')}
+                className="px-8 py-4 bg-lavender text-white rounded-2xl font-bold shadow-xl shadow-lavender/30 flex items-center gap-2 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-lavender/50 transition-all">
                 View My Work <ArrowRight size={20} />
               </button>
               <button 
