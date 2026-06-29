@@ -115,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           <a href="https://github.com/alphaaa-m" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
             <Github size={20} />
           </a>
-          <a href="https://linkedin.com/in/muneeb-ashraf" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
+          <a href="https://linkedin.com/in/muneeb-ashraf-ai" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender hover:drop-shadow-lg">
             <Linkedin size={20} />
           </a>
         </div>
@@ -210,7 +210,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                 <a href="https://github.com/alphaaa-m" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com/in/muneeb-ashraf" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender">
+                <a href="https://linkedin.com/in/muneeb-ashraf-ai" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 cursor-pointer transition-all hover:text-lavender">
                   <Linkedin size={20} />
                 </a>
               </div>

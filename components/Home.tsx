@@ -304,7 +304,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           <p className="text-sm">© 2024 Muneeb Ashraf Portfolio. All rights reserved.</p>
           <div className="flex gap-8 text-sm font-bold">
             <a href="https://github.com/alphaaa-m" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">GitHub</a>
-            <a href="https://linkedin.com/in/muneeb-ashraf" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">LinkedIn</a>
+            <a href="https://linkedin.com/in/muneeb-ashraf-ai" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">LinkedIn</a>
             <a href="https://wa.me/923006275648" target="_blank" rel="noopener noreferrer" className="hover:text-lavender transition-colors">WhatsApp</a>
             <a href="mailto:muneebashraf.edu@gmail.com?subject=Hello%20Muneeb" className="hover:text-lavender transition-colors">Email</a>
           </div>
