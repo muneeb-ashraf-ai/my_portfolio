@@ -60,25 +60,35 @@ Once the internship ended, I continued teaching at Hajveri Lyceum School, where 
       icon: Target,
       color: "from-lavender via-violet to-charcoal",
       image: "/assets/P3.png",
-      content: `I was admitted to the MS Data Science program at UET, marking a new phase in my academic journey. The program strengthened my commitment to AI research and advanced learning. During my first semester, I studied new Data Science topics, expanded my technical skills, and achieved a CGPA of 3.68, reflecting consistent progress.
+      content: `I was admitted to the MS Data Science program at UET Lahore, marking a new phase in my academic journey. Alongside my coursework, I kept deepening my knowledge of Data Science, Machine Learning, Artificial Intelligence, and modern software development.
 
-At the same time, I continued my internship at Meissasoft, where I gained structured exposure to software development practices, system design, and collaborative workflows. While working there, I received a separate remote job opportunity in an R&D role focused on voice agent testing and development.
+During this time, I also stepped into industry as a Python Developer at Meissasoft. There, I worked on backend development using FastAPI, PostgreSQL, and MongoDB, building systems that had to be reliable, scalable, and maintainable, not just functionally correct. The role pushed me to sharpen my understanding of Object-Oriented Programming, adopt disciplined software engineering practices, and grow comfortable with Git-based collaborative workflows alongside a real engineering team.
 
-In this role, I build and evaluate voice agents using Pipecat, while researching ways to improve efficiency and performance. The work involves understanding how real conversational systems operate, including Text-to-Speech (TTS), Speech-to-Text (STT), and Large Language Models (LLMs). I also explored prompt engineering and studied how AI agents reason, respond, and adapt in real environments.
+This chapter marked a meaningful shift for me: moving from academic learning to real-world software development, where ideas had to survive contact with production code, deadlines, and other people's work. It was here that I truly understood what it means to build technology that others depend on.`
+    },
+    {
+      title: "Teaching & Sharing Knowledge",
+      icon: GraduationCap,
+      color: "from-blue-500 to-cyan-500",
+      content: `While pursuing my MS in Data Science and gaining industry experience, I got the chance to conduct a Python and AI training program at VIPER Academy, a natural return to where my journey first began. The training program introduced students from diverse academic backgrounds to Python programming, data fundamentals, and the foundations of Artificial Intelligence.
 
-This experience moved my learning from theory to applied research. Instead of only implementing models, I now analyze behavior, reliability, and interaction quality, skills directly aligned with my long-term goal of contributing to advanced AI systems.`
+Through hands-on exercises and real-world examples, I watched students grow from hesitant beginners into confident problem-solvers. It let me combine my long-standing love of teaching with my growing expertise in AI, and reminded me why education has always felt like a powerful tool for transformation.
+
+The experience sharpened my communication, mentoring, and leadership skills, and deepened my appreciation for teaching as a craft I never truly left behind.`
     },
     {
       title: "Conclusion",
       icon: Award,
       color: "from-violet to-lavender",
-      content: `My journey has been a gradual transformation rather than a single decision. Mathematics developed my problem-solving mindset. Teaching strengthened my ability to explain ideas clearly. Artificial Intelligence connected my curiosity with real-world impact.
+      content: `My journey has been a gradual transformation rather than a single decision. Mathematics built my analytical thinking and taught me to approach problems with patience and precision. Teaching developed my communication and leadership skills, shaping the way I connect with people and share ideas. Data Science and Artificial Intelligence connected my two lifelong passions, mathematics and technology, into a single path forward.
 
-Financial limitations, academic interruptions, and repeated rejections did not stop my progress. They refined my direction. Today I am pursuing advanced studies while actively working with practical AI systems, bridging research and industry together.
+My time at Meissasoft gave me real-world software engineering experience, teaching me what it means to build systems that others rely on. My work in Voice AI research and development expanded my understanding of intelligent systems, pushing me beyond theory into the study of how AI truly listens, reasons, and responds. Teaching Python and AI at VIPER Academy reinforced my passion for sharing knowledge, reminding me that growth is most meaningful when it is passed on to others.
 
-My goal is to earn a PhD, contribute meaningful research in AI and Data Science, continue teaching, and build intelligent solutions that improve real-world life.
+Financial limitations, academic interruptions, and repeated setbacks did not stop my progress. They refined my direction. Today, I am pursuing my MS in Data Science while building expertise in Artificial Intelligence, software engineering, and research, bridging academic depth with practical, real-world impact.
 
-The path is still unfolding, and I am moving forward with clarity and purpose.`
+My long-term goal is to earn a PhD, contribute meaningful research in AI and Data Science, continue teaching, and build intelligent systems that make a genuine difference in people's lives.
+
+The path is still unfolding, and I am moving forward with clarity, purpose, and an unwavering belief in what lies ahead.`
     }
   ];
 
