@@ -109,7 +109,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
           {[
             { label: 'Years in Tech', val: '03+' },
-            { label: 'Years in Teaching', val: '07+' },
+            { label: 'Years in Teaching', val: '08+' },
             { label: 'Projects Done', val: '15+' },
             { label: 'Technologies', val: '20+' },
             { label: 'Certifications', val: '08+' },
