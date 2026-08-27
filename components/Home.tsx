@@ -49,7 +49,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             <h1 className={`text-5xl md:text-7xl font-extrabold leading-tight mb-6 ${theme === 'dark' ? '' : 'text-violet-700'}`}>
               Hi, I'm <span className="text-lavender">Muneeb</span>... <br />
               <span className={theme === 'dark' ? 'text-transparent bg-clip-text bg-gradient-to-r from-lavender via-violet to-charcoal' : 'text-lavender'}>
-                AI & Data Science Developer.
+                <span className="md:whitespace-nowrap">AI & Data Science</span>
+                <br className="hidden md:block" />
+                {' '}Developer... Mathematician
               </span>
             </h1>
             <p className="text-lg md:text-xl opacity-80 max-w-lg mb-8 leading-relaxed">
@@ -104,9 +106,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
       {/* Stats Section */}
       <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
           {[
             { label: 'Years in Tech', val: '03+' },
+            { label: 'Years in Teaching', val: '07+' },
             { label: 'Projects Done', val: '15+' },
             { label: 'Technologies', val: '20+' },
             { label: 'Certifications', val: '08+' },
